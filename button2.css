@@ -1,0 +1,13 @@
+.button {
+    border: none;
+    color: rgb(186, 228, 0);
+    padding: 10px 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .button2 {background-color: #000000;} /* black */

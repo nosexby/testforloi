@@ -1,0 +1,87 @@
+html
+  font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
+  font-weight: 400;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+body
+  min-height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  user-select: none
+  background-color: #756a79
+  background-image: linear-gradient(#786061,#6c80ad)
+  &.dark
+    background-color: #606578
+    background-image: linear-gradient(#7a6163,#556681)
+    
+
+  
+*, *:before, *:after
+  box-sizing: border-box
+  
+.mode
+  position: relative
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  background: black
+  cursor: pointer
+  text-align: center
+  &:before
+    content: ''
+    position: absolute
+    top: 15px
+    left: 15px
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    background-image: linear-gradient(to right, white 50%, black 50.01%)
+    border: 2px solid white
+    transition: transform .5s ease-out
+  &:after
+    content: ''
+    position: absolute
+    top: 24px
+    left: 24px
+    width: 12px
+    height: 12px
+    border-radius: 50%
+    background: white
+    mix-blend-mode: difference
+    
+  div
+    position: absolute
+    bottom: -44px
+    width: 76px
+    left: 50%
+    transform: translateX(-50%)
+    font-size: 14px
+    font-weight: 500
+    color: white
+    line-height: 18px
+    pointer-events: none
+    &:after
+      content: 'Off'
+      font-weight: 400
+
+.dark
+  .mode
+    background: white
+    &:before
+      border: 2px solid black
+      transform: rotate(180deg)
+      
+    div:after
+      content: 'On'
+
+.scaling:after
+  animation: scaleInner .5s ease forwards
+      
+@keyframes scaleInner
+  50%
+    transform: scale(1.8)
+    
